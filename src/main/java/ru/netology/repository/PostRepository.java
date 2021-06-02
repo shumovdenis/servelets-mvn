@@ -10,7 +10,6 @@ import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
 
 // Stub
-@Repository
 public class PostRepository {
   private int id = 0;
   private ConcurrentHashMap<Integer, Post> postsMap = new ConcurrentHashMap<>();
