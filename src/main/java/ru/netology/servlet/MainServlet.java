@@ -10,16 +10,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.ObjectInputFilter;
 
 public class MainServlet extends HttpServlet {
   private PostController controller;
 
   @Override
   public void init() {
-    final var context = new AnnotationConfigApplicationContext("ru.netology");
-    final var controller = context.getBean("postController");
-    final var service = context.getBean(PostService.class);
-    final var isSame = service == context.getBean("postService");
+    AnnotationConfigApplicationContext context= new AnnotationConfigApplicationContext(ObjectInputFilter.Config.class);
+    controller = context.getBean(PostController.class);
   }
 
 
